@@ -1,0 +1,1601 @@
+body {
+margin: 0;
+  background: linear-gradient(135deg, #0d0d0d 40%, #3a0000 100%);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.head {
+ background-color: #1a1a1a; /* color sólido de la cabecera */
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between; /* separa título y botones */
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3); /* ese toque de sombra roja 🔥 */
+   flex-wrap: wrap; /* 🔥 para que no se rompa si se reduce la pantalla */
+
+}
+.logo {
+font-size: 2rem;
+  letter-spacing: 2px;
+  color: #2c5364;
+}
+.logo a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-shadow: 0 0 10px #f44336;
+}
+.navegacion a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 5px 40px;
+    border: 2px solid red;
+    color: white;
+    text-decoration: none;
+    background: red;
+    border-radius: 60px;
+    transition: 0.3s;
+    font-size: 18px;
+}
+.navegacion a:hover {
+    background-color: #fff;
+  color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+  transform: scale(1.05);
+}
+
+.holograma {
+  color: #ccc;
+  font-style: italic;
+  transition: 0.3s ease;
+  cursor: pointer;
+   text-align: center; /* ✨ centra el texto entre el logo y los botones */
+}
+
+.holograma:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #0ff;
+  transform: scale(1.1);
+}
+/* decoración de las secciones*/
+
+.contenido {
+ display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 30px;
+}
+
+.botonE {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 40px;
+    border: 2px solid red;
+    color: white;
+    text-decoration: none;
+    background: red;
+    border-radius: 60px;
+    transition: 0.3s;
+    font-size: 18px;
+    margin:  20px auto;
+     animation-delay: 0.6s;
+}
+.botonE:hover {
+  background-color: #fff;
+  color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+  transform: scale(1.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* El contenido principal (izquierda) */
+.contenido main {
+  flex: 1; /* ocupa el espacio disponible */
+  max-width: 70%; /* o lo que prefieras */
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.4),
+    0 0 50px rgba(255, 0, 0, 0.2);
+  overflow: visible;   /* 🔥 deja salir la sombra */
+}
+
+/* El cuadro del aside (derecha) */
+.contenido aside {
+  flex: 0 0 25%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  overflow: hidden; /* evita que el contenido se salga */
+  transition: transform 0.4s ease, opacity 0.3s;
+  z-index: 10;
+}
+
+.contenido aside.activo .lado-derecho {
+  animation: aparecer 0.4s ease forwards;
+}
+@keyframes aparecer {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background: rgba(0,0,0,0.5); /* ligero filtro para destacar sobre el fondo */
+  color: white;
+}
+.hero h2, .hero p, .botonE {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 1s ease forwards;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #f44336;
+  transition: 1.5s;
+  cursor: default;
+}
+.hero h2:hover {
+    color: #f44336;           /* texto rojo brillante */
+  text-shadow: 0 0 15px #f44336, 0 0 25px #f44336; /* glow */
+  transform: scale(1.05);
+
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;        /* que no se haga muy ancho */
+  margin-top: 20px;
+  color: #ccc;             /* gris suave sobre el fondo */
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); /* un toque de glow rojo tenue */
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  cursor: default;          /* no hace click, solo efecto visual */
+  animation-delay: 0.3s;
+}
+.hero p:hover {
+  color: #fff;                       /* se ilumina un poco */
+  text-shadow: 0 0 8px #f44336, 0 0 15px #f44336;
+  transform: scale(1.02);            /* pequeño efecto de zoom */
+}
+
+.hero a {
+  padding: 10px 25px;
+  background-color: #f44336;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.hero a:hover {
+  background-color: #fff;
+  color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+  transform: scale(1.05);
+}
+
+/* secciones de los lados */
+.lado-derecho {
+  position: relative; /* ya no es fixed */
+  width: 100%;        /* ocupa todo el ancho del aside */
+  height: auto;
+  max-height: none;   /* deja crecer según el contenido */
+  padding: 0;         /* el padding ya lo tiene el aside */
+  background: rgba(0, 0, 0, 0.85); /* 🔥 le da fondo sólido para que el texto se vea */
+  box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.3); /* brillo interno rojo */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  overflow-y: auto; /* deja fluir el contenido sin recortar */
+  scrollbar-width: none; /* sigue ocultando la barra en navegadores que lo soportan */
+  z-index: 1;
+  
+  
+}
+
+.lado-derecho.activo {
+  transform: translateX(0); /* se desliza hacia adentro */
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3); /* 🔥 antes era 0.6 */
+  z-index: 998;
+  transition: background 0.3s ease;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none; /* por defecto oculto */
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  color: #f44336;
+  cursor: pointer;
+  text-shadow: 0 0 15px #f44336;
+  z-index: 3000; /* 🔥 asegura que esté encima de todo */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.menu-toggle:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 20px #ff4d4d;
+}
+
+/* --- Versión móvil --- */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block !important; /* mostrar solo en móviles */
+  }
+
+  .contenido {
+    flex-direction: column;
+  }
+
+  .contenido aside {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 10;
+    border-radius: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .contenido aside.activo {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  #overlay.activo {
+    display: block;
+    z-index: 2500;
+  }
+
+  .lado-derecho {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+/* --- 💻 VERSIÓN ESCRITORIO --- */
+@media (max-width: 768px) {
+  /* Mostrar el botón hamburguesa */
+  .menu-toggle {
+    display: block !important;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    color: #f44336;
+    cursor: pointer;
+    text-shadow: 0 0 15px #f44336;
+    z-index: 3000;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .menu-toggle:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 20px #ff4d4d;
+  }
+
+  /* El aside se vuelve panel lateral */
+  #barra {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 2500;
+    border-radius: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #barra.activo {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Fondo oscuro al abrir */
+  #overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+  }
+
+  #overlay.activo {
+    display: block;
+  }
+
+  /* 🔥 Solo el menú hace scroll */
+  #barra .lado-derecho {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Bloquear el fondo */
+  body.menu-abierto {
+    overflow: hidden;
+  }
+
+  /* Columnas normales */
+  .contenido {
+    flex-direction: column;
+  }
+}
+
+.lado-derecho::-webkit-scrollbar {
+  display: none;               /* Chrome, Edge, Safari */
+}
+
+.lado-derecho h4 {
+  color: #f44336;
+  text-shadow: 0 0 10px #f44336;
+  margin-bottom: 10px;
+  font-family: initial;
+  font-size: 30px;
+  text-align: center;
+}
+.lado-derecho h6{
+
+  color: #f44336;
+  text-shadow: 0 0 10px #f44336;
+  margin-bottom: 10px;
+  font-family: initial;
+  font-size: 15px;
+  text-align: center;
+}
+.lado-derecho p {
+  color: #ccc;
+  text-shadow: 0 0 5px rgba(255,0,0,0.2);
+  line-height: 1.5;
+  text-align: center;
+}
+
+.lado-derecho button {
+  margin-top: 10px;
+  padding: 8px 110px;
+  background-color: #f44336;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  justify-content: center;
+  display: flex;
+}
+
+.lado-derecho button:hover {
+  background-color: white;
+  color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+  transform: scale(1.05);
+}
+#barra .lado-derecho {
+  overflow-y: auto;
+  max-height: 100vh;
+  -webkit-overflow-scrolling: touch; /* scroll suave en móviles */
+}
+
+/* --- Botón hamburguesa --- */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 25px;
+  font-size: 30px;
+  color: #f44336;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* --- Ocultar en pantallas pequeñas --- */
+
+  /* aside se desliza, no el contenido interno */
+  
+
+
+
+/* Introducción */
+
+#introducción {
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background: url(img/fondo-intro.webp);
+  color: white;
+
+}
+ #introducción h3 {
+
+     font-size: 3rem;
+  margin-bottom: 20px;
+ text-shadow: 
+  0 0 5px #f44336,
+  0 0 10px #f44336,
+  0 0 20px #f44336;
+  transition: 1s;
+  cursor: default;
+ }
+
+ #introducción h3:hover {
+    color: #f44336;           /* texto rojo brillante */
+  text-shadow: 0 0 15px #f44336, 0 0 25px #f44336; /* glow */
+  transform: scale(1.05);
+ }
+
+ #introducción p {
+  font-size: 1.2rem;
+  max-width: 700px;        /* que no se haga muy ancho */
+  margin-top: 20px;
+  color: #ccc;             /* gris suave sobre el fondo */
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); /* un toque de glow rojo tenue */
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  cursor: default;          /* no hace click, solo efecto visual */
+}
+
+#introducción p:hover {
+  color: #fff;                       /* se ilumina un poco */
+  text-shadow: 0 0 8px #f44336, 0 0 15px #f44336;
+  transform: scale(1.02);            /* pequeño efecto de zoom */
+}
+
+/* Pestaña para descubrir opciones en la página*/
+
+#descubrir {
+
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background: url(img/fono-descubrir.png);
+  color: white;
+
+}
+
+#descubrir h3 {
+
+      font-size: 3rem;
+  margin-bottom: 20px;
+ text-shadow: 
+  0 0 5px #f44336,
+  0 0 10px #f44336,
+  0 0 20px #f44336;
+  transition: 1s;
+  cursor: default;
+}
+#descubrir h3:hover {
+
+      color: #f44336;           /* texto rojo brillante */
+  text-shadow: 0 0 15px #f44336, 0 0 25px #f44336; /* glow */
+  transform: scale(1.05);
+}
+
+#descubrir p {
+  font-size: 1.2rem;
+  max-width: 700px;        /* que no se haga muy ancho */
+  margin-top: 20px;
+  color: #ccc;             /* gris suave sobre el fondo */
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); /* un toque de glow rojo tenue */
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  cursor: default;          /* no hace click, solo efecto visual */
+
+}
+
+#descubrir p:hover {
+  color: #fff;                       /* se ilumina un poco */
+  text-shadow: 0 0 8px #f44336, 0 0 15px #f44336;
+  transform: scale(1.02);            /* pequeño efecto de zoom */
+}
+
+.music {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background: url(img/fondo-musica.png) no-repeat;
+  color: white;
+
+}
+
+h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #dad8d8;
+  text-align: center;
+  margin-bottom: 20px;
+
+  /* efecto de neón suave */
+  text-shadow:
+    0 0 5px #f44336,
+    0 0 10px #f44336,
+    0 0 20px #ff0000;
+
+  /* animación tipo parpadeo de luz */
+  animation: parpadeo 2.5s infinite alternate;
+  cursor: default;
+}
+
+@keyframes parpadeo {
+  from {
+    text-shadow:
+      0 0 5px #f44336,
+      0 0 10px #f44336,
+      0 0 20px #ff0000;
+    opacity: 1;
+  }
+  to {
+    text-shadow:
+      0 0 2px #a00000,
+      0 0 5px #700000,
+      0 0 10px #400000;
+    opacity: 0.8;
+  }
+}
+p {
+   color: #ebefee;
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px rgba(0, 188, 212, 0.6);
+  transition: 0.3s;
+  cursor: default;
+}
+
+p:hover {
+  color: #00eaff;
+  text-shadow: 0 0 15px #00eaff, 0 0 25px #00eaff;
+  transform: scale(1.03);
+}
+
+.arte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background: url(img/fono-arte.png) no-repeat;
+  color: white;
+}
+
+.recomendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background: url(img/historia.png) no-repeat;
+  color: white;
+
+}
+
+.recomendar h2 {
+ font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #f57474;
+  text-align: center;
+  margin-bottom: 20px;
+
+  /* efecto de neón suave */
+  text-shadow:
+    0 0 5px #fcf6f6,
+    0 0 10px#fcf6f6,
+    0 0 20px #fcf6f6;
+
+  /* animación tipo parpadeo de luz */
+  animation: parpadeo 2.5s infinite alternate;
+  cursor: default;
+  font-family: monospace;
+
+}
+
+footer {
+  position: fixed;
+  bottom: -100px; /* oculto fuera de la vista */
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 15px 0;
+  box-shadow: 0 -5px 20px rgba(255, 0, 0, 0.3);
+  transition: bottom 0.6s ease;
+  z-index: 20;
+}
+footer.visible {
+  bottom: 0; /* aparece */
+}
+
+@media (max-width: 768px) {
+  /* 🔥 Ajusta la estructura */
+  .contenido {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  /* 🔥 Hace que las secciones no se encimen */
+  section, #introducción, #descubrir, .hero {
+    padding: 40px 20px;
+    text-align: center;
+    height: auto; /* quita el alto fijo */
+  }
+
+  /* 🔥 Corrige los textos */
+  h2, h3 {
+    font-size: 1.8rem; /* reduce tamaño */
+    line-height: 1.3;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+    max-width: 95%;
+  }
+
+  /* 🔥 Botones más cómodos en móvil */
+  .botonE, .hero a, .lado-derecho button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+/*Secciones de Subsuelo-Música*/
+
+.musicaSub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* ocupa casi toda la pantalla */
+  text-align: center;
+  background:url(img/fondo-musica.png) ;
+  color: white;
+}
+.musicaSub h2, .hero p, .botonE {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: aparecer 1s ease forwards;
+}
+
+.musicaSub h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #f44336;
+  transition: 1.5s;
+  cursor: default;
+}
+.musicaSub h2:hover {
+    color: #f44336;           /* texto rojo brillante */
+  text-shadow: 0 0 15px #f44336, 0 0 25px #f44336; /* glow */
+  transform: scale(1.05);
+
+}
+
+.musicaSub p {
+  font-size: 1.2rem;
+  max-width: 700px;        /* que no se haga muy ancho */
+  margin-top: 20px;
+  color: #ccc;             /* gris suave sobre el fondo */
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); /* un toque de glow rojo tenue */
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  cursor: default;          /* no hace click, solo efecto visual */
+  animation-delay: 0.3s;
+}
+.musicaSub p:hover {
+  color: #fff;                       /* se ilumina un poco */
+  text-shadow: 0 0 8px #f44336, 0 0 15px #f44336;
+  transform: scale(1.02);            /* pequeño efecto de zoom */
+}
+
+.musicaSub a {
+  padding: 10px 25px;
+  background-color: #f44336;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.musicaSub a:hover {
+  background-color: #fff;
+  color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+  transform: scale(1.05);
+}
+
+
+
+.bandaDestacada {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px; /* 🔥 más espacio entre texto e imagen */
+  align-items: center;
+  justify-content: center;
+  background: url("img/slipknot.jpg") no-repeat center center;
+  background-size: cover;
+  border-radius: 12px;
+  padding: 60px 80px; /* 🔥 empuja el texto hacia el centro */
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.7), 0 0 30px rgba(255,0,0,0.2);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.bandaDestacada::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.4) 80%);
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* 🔧 centra el texto visualmente */
+.bandaDestacada .banda-info {
+  position: relative;
+  z-index: 1;
+  padding-left: 40px; /* mueve un poco el texto hacia adentro */
+}
+
+.banda-info h2 {
+  color: #bdbdbd; /* gris para descansar del rojo */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  text-shadow: 0 0 6px rgba(255,0,0,0.25);
+}
+
+.banda-info p {
+font-size: 1.2rem;
+  max-width: 700px;        /* que no se haga muy ancho */
+  margin-top: 20px;
+  color: #ccc;             /* gris suave sobre el fondo */
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.2); /* un toque de glow rojo tenue */
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+  cursor: default;          /* no hace click, solo efecto visual */
+  animation-delay: 0.3s;
+}
+
+.banda-media img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 0 18px rgba(255,0,0,0.25);
+  object-fit: cover;
+}
+
+.bandaDestacada .acciones {
+  display: flex; gap: 10px; flex-wrap: wrap;
+}
+
+/* 🔧 centra el texto visualmente */
+.bandaDestacada .banda-info {
+  position: relative;
+  z-index: 1;
+  padding-left: 40px; /* mueve un poco el texto hacia adentro */
+}
+
+/* 📱 versión móvil */
+@media (max-width: 768px) {
+  .bandaDestacada {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .bandaDestacada .banda-info {
+    padding-left: 0;
+  }
+}
+
+.limpBizkit {
+  background: url("img/limp-bizkit.jpeg") no-repeat center center;
+  background-size: cover;
+  box-shadow: inset 0 0 40px rgba(255,0,0,0.3);
+  text-align: center;
+}
+
+.limpBizkit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0.4) 80%);
+  z-index: 0;
+}
+
+.limpBizkit .banda-info h2 {
+  color: #cfcfcf;
+  text-shadow: 0 0 15px rgba(255,0,0,0.4);
+}
+
+.limpBizkit .banda-info p {
+  color: #ff9999;
+  text-shadow: 0 0 8px rgba(255,0,0,0.2);
+}
+
+.maneskin {
+  background: url("img/maneskin.jpeg") no-repeat center center;
+  background-size: cover;
+  box-shadow: inset 0 0 40px rgba(255,0,0,0.3);
+  position: relative;
+}
+
+.maneskin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.85) 15%, rgba(0,0,0,0.4) 80%);
+  z-index: 0;
+}
+
+.maneskin .banda-info h2 {
+  color: #d8d8d8;
+  text-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+.maneskin .banda-info p {
+  color: #ffcccc;
+  text-shadow: 0 0 10px rgba(255,0,0,0.2);
+}
+
+.magoDeOz {
+  background: url("img/mago.jpeg") no-repeat center center;
+  background-size: cover;
+  box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.3);
+  position: relative;
+}
+
+.magoDeOz::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.85) 20%, rgba(0, 0, 0, 0.4) 80%);
+  z-index: 0;
+}
+
+.magoDeOz .banda-info h2 {
+  color: #ffce7a; /* tono dorado suave */
+  text-shadow: 0 0 15px rgba(255, 150, 0, 0.6);
+}
+
+.magoDeOz .banda-info p {
+  color: #f5d9b0;
+  text-shadow: 0 0 8px rgba(255, 120, 0, 0.2);
+}
+
+
+/*ARTE */
+/* ====== Intro Arte (fondo graffiti sin imágenes) ====== */
+.arteIntro {
+  position: relative;
+  isolation: isolate;
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: clamp(40px, 6vw, 80px);
+  border-radius: 14px;
+  overflow: hidden;
+  /* Capa base: pared oscura con viñeta roja */
+  background:
+    radial-gradient(120% 80% at 80% 0%, rgba(120,0,0,0.35) 0%, transparent 60%) ,
+    radial-gradient(120% 80% at 20% 100%, rgba(255,0,0,0.18) 0%, transparent 60%) ,
+    linear-gradient(135deg, #0b0b0b 35%, #1a0000 100%);
+  box-shadow:
+    0 0 35px rgba(255,0,0,0.25),
+    inset 0 0 25px rgba(0,0,0,0.6);
+}
+
+/* Capa spray/grano */
+.arteIntro::before {
+  content:"";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  /* “Spray” con granulado usando gradientes repetidos */
+  background:
+    /* salpicaduras grandes rojizas */
+    radial-gradient(18px 18px at 15% 20%, rgba(255,30,30,0.25) 0 60%, transparent 61%) ,
+    radial-gradient(22px 22px at 75% 35%, rgba(255,50,50,0.23) 0 60%, transparent 61%) ,
+    radial-gradient(14px 14px at 55% 75%, rgba(255,20,20,0.22) 0 60%, transparent 61%) ,
+    /* gotitas finas */
+    radial-gradient(3px 3px at 20% 40%, rgba(255,0,0,0.30) 0 70%, transparent 71%) ,
+    radial-gradient(3px 3px at 28% 46%, rgba(255,0,0,0.24) 0 70%, transparent 71%) ,
+    radial-gradient(3px 3px at 35% 50%, rgba(255,0,0,0.26) 0 70%, transparent 71%) ,
+    radial-gradient(3px 3px at 62% 58%, rgba(255,0,0,0.22) 0 70%, transparent 71%) ,
+    radial-gradient(3px 3px at 70% 62%, rgba(255,0,0,0.24) 0 70%, transparent 71%) ,
+    /* ruido fino para textura de pared */
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 4px);
+  filter: blur(0.2px) contrast(1.05);
+  mix-blend-mode: overlay;
+}
+
+/* Goteos (drips) sutiles en la parte superior */
+.arteIntro::after {
+  content:"";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(12px 20px at 12% 0%, rgba(255,0,0,0.45) 0 60%, transparent 61%),
+    radial-gradient(10px 22px at 24% 0%, rgba(255,0,0,0.35) 0 60%, transparent 61%),
+    radial-gradient(8px 16px  at 37% 0%, rgba(255,0,0,0.35) 0 60%, transparent 61%),
+    radial-gradient(14px 24px at 61% 0%, rgba(255,0,0,0.35) 0 60%, transparent 61%),
+    radial-gradient(9px 18px  at 78% 0%, rgba(255,0,0,0.35) 0 60%, transparent 61%);
+  background-repeat: no-repeat;
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+}
+
+/* Contenido */
+.arteIntro__content {
+  max-width: min(900px, 90vw);
+  text-align: center;
+  backdrop-filter: blur(1.2px);
+}
+
+.arteIntro__content h2 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #e5e5e5;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 6px rgba(255,0,0,0.35),
+    0 0 18px rgba(255,0,0,0.25);
+}
+
+.arteIntro__content p {
+  margin: 0 auto;
+  color: #f4c7c7; /* rosa pálido para variar del gris */
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  line-height: 1.8;
+  text-shadow: 0 0 8px rgba(255,0,0,0.18);
+  max-width: 70ch;
+}
+
+/* Responsive: margen extra para respirar en móviles */
+@media (max-width: 768px) {
+  .arteIntro { padding: 36px 20px; }
+}
+
+
+/* ===== CULTURA SKATE ===== */
+.culturaSkate {
+  background:
+    linear-gradient(135deg, #0b0b0b 50%, #210000 100%),
+    radial-gradient(circle at top left, rgba(255,0,0,0.2), transparent 70%);
+  background-blend-mode: overlay;
+  padding: 70px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 30px rgba(255,0,0,0.25);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.culturaSkate__contenido {
+  max-width: 1000px;
+  margin: auto;
+  backdrop-filter: blur(1px);
+}
+
+.culturaSkate__contenido h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #f1f1f1;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255,0,0,0.4);
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.culturaSkate__contenido p {
+  color: #ffcccc;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.8;
+  text-shadow: 0 0 8px rgba(255,0,0,0.2);
+  margin-bottom: 40px;
+}
+
+/* Bloques inferiores */
+.culturaSkate__bloques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.bloque {
+  background: rgba(30, 0, 0, 0.7);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.25),
+    inset 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bloque:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.bloque h3 {
+  color: #f44336;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255,0,0,0.3);
+  font-size: 1.3rem;
+}
+
+.bloque p {
+  color: #f5f5f5;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .culturaSkate {
+    padding: 50px 15px;
+  }
+  .bloque {
+    padding: 20px;
+  }
+}
+
+/* ===== GRAFFITI Y TINTA ===== */
+.graffitiTinta {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      #0e0e0e 0px,
+      #111 4px,
+      #0d0d0d 8px
+    ),
+    radial-gradient(circle at top left, rgba(255,0,0,0.2), transparent 70%),
+    radial-gradient(circle at bottom right, rgba(255,0,0,0.15), transparent 60%);
+  background-blend-mode: overlay;
+  padding: 80px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 30px rgba(255,0,0,0.3);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto spray del muro */
+.graffitiTinta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(3px 3px at 15% 25%, rgba(255, 0, 0, 0.25) 0 70%, transparent 71%),
+    radial-gradient(3px 3px at 60% 80%, rgba(255, 0, 0, 0.2) 0 70%, transparent 71%),
+    radial-gradient(3px 3px at 85% 40%, rgba(255, 0, 0, 0.15) 0 70%, transparent 71%);
+  opacity: 0.8;
+  mix-blend-mode: overlay;
+  filter: blur(0.3px);
+}
+
+.graffitiTinta__contenido {
+  max-width: 1000px;
+  margin: auto;
+  backdrop-filter: blur(1px);
+}
+
+.graffitiTinta__contenido h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #eee;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 10px rgba(255, 0, 0, 0.4),
+    0 0 25px rgba(255, 0, 0, 0.2);
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.graffitiTinta__contenido p {
+  color: #f7bcbc;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.8;
+  text-shadow: 0 0 6px rgba(255,0,0,0.2);
+  margin-bottom: 40px;
+}
+
+/* Bloques */
+.graffitiTinta__bloques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.graffitiTinta__bloques .bloque {
+  background: rgba(25, 0, 0, 0.8);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow:
+    0 0 15px rgba(255, 0, 0, 0.25),
+    inset 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.graffitiTinta__bloques .bloque:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, 0.4),
+    inset 0 0 15px rgba(255, 0, 0, 0.25);
+}
+
+.graffitiTinta__bloques h3 {
+  color: #f44336;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px rgba(255,0,0,0.3);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+}
+
+.graffitiTinta__bloques p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .graffitiTinta {
+    padding: 50px 15px;
+  }
+  .graffitiTinta__bloques .bloque {
+    padding: 20px;
+  }
+}
+
+.muro {
+  background:
+    linear-gradient(135deg, #0b0b0b 50%, #200000 100%),
+    radial-gradient(circle at 15% 10%, rgba(255,0,0,0.20), transparent 60%),
+    radial-gradient(circle at 85% 90%, rgba(255,0,0,0.12), transparent 60%);
+  background-blend-mode: overlay;
+  padding: 60px 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 0 28px rgba(255,0,0,0.25);
+}
+
+.muro__intro h2{
+  text-transform: uppercase;
+  color: #eaeaea;
+  text-shadow: 0 0 14px rgba(255,0,0,0.35);
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+.muro__intro p{ color:#ffcccc; line-height:1.7; margin-bottom: 22px; }
+
+.muro__form {
+  display: grid;
+  gap: 14px;
+  background: rgba(20,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 18px rgba(255,0,0,0.25), inset 0 0 12px rgba(0,0,0,0.55);
+  margin-bottom: 26px;
+}
+.muro__form label { display:flex; flex-direction:column; gap:8px; color:#eee; }
+.muro__form input[type="text"], .muro__form textarea, .muro__form input[type="file"]{
+  background: rgba(0,0,0,0.55);
+  color:#fff; border:1px solid rgba(255,0,0,0.25);
+  border-radius:8px; padding:10px;
+}
+.muro__estado { color:#ffbdbd; font-size:0.95rem; min-height:1.2rem; }
+
+.muro__galeria{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap:18px;
+}
+.muro-card{
+  background: rgba(25,0,0,0.75);
+  border-radius:12px; overflow:hidden;
+  box-shadow: 0 0 14px rgba(255,0,0,0.25), inset 0 0 10px rgba(0,0,0,0.55);
+  display:flex; flex-direction:column;
+}
+.muro-card img{
+  width:100%; height:220px; object-fit:cover; display:block;
+}
+.muro-card__body{ padding:14px; color:#f5f5f5; }
+.muro-card__title{ color:#f44336; font-weight:700; margin:0 0 6px; text-shadow:0 0 8px rgba(255,0,0,0.3);}
+.muro-card__meta{ color:#bbb; font-size:0.85rem; opacity:0.9; }
+.muro__more{ margin:18px auto 0; display:block; }
+@media (max-width:768px){ .muro{ padding: 44px 16px; } }
+
+.historia-intro {
+  background: radial-gradient(circle at top left, #190000, #000);
+  padding: 80px 20px;
+  text-align: center;
+  color: #f0f0f0;
+  border-top: 2px solid #f44336;
+  border-bottom: 2px solid #f44336;
+  box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.2);
+}
+
+.historia-intro h2 {
+  color: #f44336;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+.historia-intro p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: auto;
+  color: #cfcfcf;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+}
+
+.historia-intro .resaltar {
+  color: #ff4444;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+}
+
+.historia-origen {
+  background: linear-gradient(135deg, #0b0b0b 40%, #210000 100%);
+  padding: 80px 30px;
+  border-top: 2px solid #f44336;
+  border-bottom: 2px solid #f44336;
+  box-shadow: inset 0 0 40px rgba(255, 0, 0, 0.25);
+  text-align: center;
+}
+
+.historia-origen h2 {
+  color: #f44336;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+  font-size: 2.6em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.historia-origen p {
+  color: #ddd;
+  font-size: 1.1em;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 20px auto;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+}
+
+.historia-origen .resaltar {
+  color: #ff4d4d;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 50, 50, 0.4);
+}
+
+.historia-origen .frase {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #f44336;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+
+
+.historia-zboys {
+  background: 
+    radial-gradient(circle at top right, rgba(255, 0, 0, 0.15), transparent 70%),
+    linear-gradient(160deg, #0a0a0a 30%, #1b0b0b 60%, #000000 100%);
+  background-attachment: fixed; /* efecto suave tipo parallax */
+  padding: 80px 30px;
+  border-top: 2px solid #f44336;
+  border-bottom: 2px solid #f44336;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.historia-zboys::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('img/textura-concreto.png');
+  opacity: 0.15;
+  mix-blend-mode: overlay;
+  z-index: 0;
+}
+
+.historia-zboys h2 {
+  color: #ff5555;
+  font-size: 2.6em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-shadow: 0 0 25px rgba(255, 60, 60, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-zboys p {
+  color: #e6e6e6;
+  font-size: 1.1em;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 20px auto;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-zboys .resaltar {
+  color: #ff7777;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255, 70, 70, 0.5);
+}
+
+.historia-zboys .frase {
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+  color: #ff4444;
+  font-weight: bold;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.5);
+}
+
+
+.historia-evolucion {
+  background: linear-gradient(160deg, #050505 20%, #1b0000 60%, #000 100%);
+  background-image: 
+    radial-gradient(circle at bottom left, rgba(255, 0, 0, 0.2), transparent 70%),
+    linear-gradient(145deg, #0d0d0d, #1a0000 90%);
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+  padding: 90px 25px;
+  text-align: center;
+  border-top: 2px solid #f44336;
+  border-bottom: 2px solid #f44336;
+  position: relative;
+  overflow: hidden;
+}
+
+.historia-evolucion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('img/pavimento-textura.jpg');
+  opacity: 0.1;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+.historia-evolucion h2 {
+  color: #f44336;
+  font-size: 2.8em;
+  text-transform: uppercase;
+  text-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.historia-evolucion p {
+  color: #e0e0e0;
+  max-width: 850px;
+  margin: 20px auto;
+  font-size: 1.1em;
+  line-height: 1.9;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-evolucion .frase {
+  display: block;
+  color: #ff4444;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 0 0 12px rgba(255, 0, 0, 0.4);
+  margin-top: 10px;
+}
+
+.historia-fusion {
+  background: linear-gradient(135deg, #0a0a0a, #200000, #000000);
+  background-size: 200% 200%;
+  animation: movimientoFondo 12s ease-in-out infinite;
+  padding: 90px 25px;
+  border-top: 2px solid #f44336;
+  border-bottom: 2px solid #f44336;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes movimientoFondo {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.historia-fusion h2 {
+  color: #f44336;
+  font-size: 2.6em;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-fusion p {
+  color: #eee;
+  max-width: 850px;
+  margin: 20px auto;
+  font-size: 1.1em;
+  line-height: 1.8;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.historia-fusion .resaltar {
+  color: #ff4d4d;
+  font-weight: bold;
+  text-shadow: 0 0 12px rgba(255, 80, 80, 0.5);
+}
+
+.contacto {
+  background: linear-gradient(135deg, #0d0d0d, #1a0000);
+  text-align: center;
+  padding: 80px 25px;
+  color: #eee;
+}
+
+.contacto h2 {
+  color: #f44336;
+  text-shadow: 0 0 15px #f44336;
+  font-size: 2.5em;
+}
+
+.contacto p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+  gap: 15px;
+}
+
+.contacto input,
+.contacto select,
+.contacto textarea {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #f44336;
+  color: white;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.contacto button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.contacto button:hover {
+  background: white;
+  color: #f44336;
+  box-shadow: 0 0 15px #f44336;
+}
+
+.gracias {
+  background: linear-gradient(135deg, #0d0d0d, #1a0000);
+  text-align: center;
+  padding: 80px 25px;
+  color: #eee;
+
+}
+
+.gracias h3 {
+  color: #f44336;
+  text-shadow: 0 0 15px #f44336;
+  font-size: 2.5em;
+
+}
+
+.gracias p {
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.gracias span {
+  color: rgb(135, 27, 27);
+  margin-bottom: 30px;
+  transition: 1s
+}
+
+.gracias span:hover {
+
+  color: red;
+  text-shadow:0 0 15px #190000;
+
+}
+.gracias .botonE {
+  text-align: center;
+}
